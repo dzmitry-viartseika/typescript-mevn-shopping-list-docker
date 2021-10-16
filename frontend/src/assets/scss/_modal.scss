@@ -1,0 +1,91 @@
+.app-modal-form {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &-wrap {
+    position: relative;
+    z-index: 1;
+    max-height: 90%;
+    background: $color-white;
+    border-radius: $borderRadius;
+    display: flex;
+    flex-direction: column;
+
+    &-header {
+      padding: 17px 18px;
+      border-bottom: 1px solid rgba($color-logo, .2);
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      &__title {
+        color: $color-logo;
+        font: 14px $font-global-medium;
+      }
+
+      &__close {
+        position: absolute;
+        right: 18px;
+        top: 14px;
+        width: 24px;
+        height: 24px;
+        background: rgba($color-logo, .2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: opacity .15s ease-in;
+
+        &:hover {
+          opacity: .6;
+        }
+      }
+
+      &__icon {
+        color: $color-logo;
+        position: relative;
+        top: -1px;
+
+        &:before {
+          font-size: 9px;
+        }
+      }
+    }
+
+    &-content {
+      padding: 20px 18px;
+
+      &-row {
+        min-height: 70px;
+      }
+
+      &-buttons {
+        padding-top: 15px;
+        display: flex;
+        justify-content: flex-end;
+
+        button + button {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  &__overlay {
+    background: rgba($color-black, .5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

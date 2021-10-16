@@ -1,0 +1,8 @@
+@import './variables' ;
+
+
+body {
+  font: $font-size-base;
+  line-height: 1.2;
+  color: $color-text;
+}

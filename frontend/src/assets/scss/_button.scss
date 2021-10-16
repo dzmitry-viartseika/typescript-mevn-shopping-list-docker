@@ -1,0 +1,52 @@
+@import '../../assets/scss/variables' ;
+
+.app__button {
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 2px;
+  background: $color-title;
+  color: $color-white;
+  font: 16px Ubuntu, sans-serif;
+  cursor: pointer;
+  transition: opacity .15s ease-in;
+
+  &_primary {
+    height: 30px;
+    color: $color-white;
+    background: $background-primary;
+  }
+
+  &_disabled {
+    color: $color-text;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &_success {
+    height: 30px;
+    background: $background-success;
+  }
+
+  &_border {
+    height: 45px;
+    background: $color-white;
+  }
+
+  &_border-success {
+    height: 45px;
+    color: $color-white;
+  }
+
+  &_back {
+    position: relative;
+    top: 50%;
+    left: 82%;
+    font-size: 20px;
+  }
+
+  &_modal {
+    height: 45px;
+    padding: 0 10px;
+    color: $color-white;
+  }
+}
