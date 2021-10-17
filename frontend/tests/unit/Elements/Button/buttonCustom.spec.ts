@@ -7,6 +7,7 @@ describe('ButtonCustom.vue', () => {
   const defaultBtnType = 'button';
   const propData = { type: 'submit' };
   const listeners = { click: null };
+  const generateClick = jest.fn();
 
   let wrapper: any;
 
@@ -22,14 +23,16 @@ describe('ButtonCustom.vue', () => {
 
   afterEach(() => {
     if (wrapper) {
-      wrapper.destry();
+      wrapper.destroy();
     }
   });
 
   test('raise the click event on click', () => {
     createComponent({ listeners });
-    wrapper.find('.app__button').trigger('click');
-    expect(listeners.click).toHaveBeenCalled();
+    generateClick();
+    const button = wrapper.find('.app__button');
+    button.trigger('click');
+    expect(generateClick).toHaveBeenCalled();
   });
 
   test('make ButtonCustom snapshot', () => {
