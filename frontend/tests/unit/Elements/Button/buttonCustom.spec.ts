@@ -5,13 +5,13 @@ describe('ButtonCustom.vue', () => {
   /** Определяем входные параметры */
   const slots = { default: 'ButtonText' };
   const defaultBtnType = 'button';
-  const propData = { type: 'submit' };
+  const propData = { buttonType: 'button' };
   const listeners = { click: null };
   const generateClick = jest.fn();
 
   let wrapper: any;
 
-  const createComponent = (options: any) => {
+  const createComponent = (options?: any) => {
     wrapper = shallowMount(ButtonCustom, options);
   };
 
@@ -38,5 +38,15 @@ describe('ButtonCustom.vue', () => {
   test('make ButtonCustom snapshot', () => {
     wrapper = shallowMount(ButtonCustom);
     expect((wrapper.element)).toMatchSnapshot();
+  });
+
+  test('button type is submit', () => {
+    createComponent({ propData });
+    expect(wrapper.attributes('type')).toBe(propData.buttonType);
+  });
+
+  test('button type is button', () => {
+    createComponent();
+    expect(wrapper.attributes('type')).toBe(defaultBtnType);
   });
 });
