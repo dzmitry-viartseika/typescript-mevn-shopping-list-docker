@@ -5,7 +5,11 @@ describe('ButtonCustom.vue', () => {
   /** Определяем входные параметры */
   const slots = { default: 'ButtonText' };
   const defaultBtnType = 'button';
-  const propData = { buttonType: 'button' };
+  const propData = {
+    buttonType: 'button',
+    disabled: true,
+  };
+
   const listeners = { click: null };
   const generateClick = jest.fn();
 
@@ -33,6 +37,16 @@ describe('ButtonCustom.vue', () => {
     const button = wrapper.find('.app__button');
     button.trigger('click');
     expect(generateClick).toHaveBeenCalled();
+  });
+
+  test('check disabled button', () => {
+    createComponent({ propData });
+    expect((wrapper.attributes('disabled'))).toBe(propData.disabled);
+  });
+
+  test('check disabled class on button', () => {
+    createComponent({ disabled: true });
+    expect(wrapper.classes()).toContain('app__button_disabled');
   });
 
   test('make ButtonCustom snapshot', () => {
