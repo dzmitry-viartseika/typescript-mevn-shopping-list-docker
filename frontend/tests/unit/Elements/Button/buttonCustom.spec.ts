@@ -3,7 +3,6 @@ import ButtonCustom from '@/components/Elements/Button/ButtonCustom.vue';
 
 describe('ButtonCustom.vue', () => {
   /** Определяем входные параметры */
-  const slots = { default: 'ButtonText' };
   const defaultBtnType = 'button';
   const propData = {
     buttonType: 'button',
