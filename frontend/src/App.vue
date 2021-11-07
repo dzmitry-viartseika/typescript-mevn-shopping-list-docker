@@ -2,16 +2,22 @@
   <div class="app">
     <Navbar />
     <router-view/>
+<!--    wertey-->
+<!--    <SvgIcon-->
+<!--      name="Close"-->
+<!--    ></SvgIcon>-->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+// import SvgIcon from 'vue-svgicon';
 import Navbar from '@/components/Header/Navbar.vue';
 
 @Component({
   components: {
     Navbar,
+    // SvgIcon,
   },
 })
 export default class App extends Vue {}
