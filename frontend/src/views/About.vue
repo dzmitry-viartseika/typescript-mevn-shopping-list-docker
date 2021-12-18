@@ -1,6 +1,6 @@
 <template>
   <div class="app-create">
-    <h1>Create page</h1>
+    <h1>Create page wertey</h1>
   </div>
 </template>
 
