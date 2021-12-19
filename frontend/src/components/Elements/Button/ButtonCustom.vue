@@ -1,6 +1,7 @@
 <template>
   <button
     class="app__button"
+    data-test-id="button"
     :class="{'app__button_disabled': disabled}"
     :disabled="disabled"
     :type="buttonType"
